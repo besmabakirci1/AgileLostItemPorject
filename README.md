@@ -18,6 +18,9 @@ Kayıp eşya ve bulunan eşya ilanlarının paylaşıldığı, kullanıcıların
 
 - **[Product Backlog](docs/PRODUCT_BACKLOG.md)** – Tüm özellikler ve iyileştirmeler listesi.
 - **[Sprint Planı](docs/SPRINT_PLAN.md)** – 4 sprint’lik 8 haftalık plan (hedefler ve görevler).
+- **[Sprint 1](docs/SPRINT_1.md)** · **[Sprint 2](docs/SPRINT_2.md)** · **[Sprint 3](docs/SPRINT_3.md)** · **[Sprint 4](docs/SPRINT_4.md)** – Sprint detayları ve teslim edilen işler.
+- **[Proje Planlaması](docs/PROJE_PLANLAMASI.md)** – Proje kapsamı, zaman planı, roller, riskler, teslim planı.
+- **[HPCA Raporu](docs/HPCA_RAPORU.md)** – Haftalık proje çalışma aktiviteleri (haftalık rapor).
 
 **Olaylar:**
 
