@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime  @default(now())
+  lostItems    LostItem[]
+  foundItems   FoundItem[]
+  sentMessages    Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+}
+
+model LostItem {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  category    String
+  place       String
+  lostAt      DateTime
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  messages    Message[] @relation("LostItemMessages")
+}
+
+model FoundItem {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  category    String
+  place       String
+  foundAt     DateTime
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  messages    Message[] @relation("FoundItemMessages")
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  content   String
+  senderId  String
+  sender    User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiverId String
+  receiver  User     @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  lostItemId  String?
+  lostItem    LostItem?  @relation("LostItemMessages", fields: [lostItemId], references: [id], onDelete: Cascade)
+  foundItemId String?
+  foundItem   FoundItem? @relation("FoundItemMessages", fields: [foundItemId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #0a0a0a;
+  --background: #fafafa;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500/40;
+  }
+  .btn-secondary {
+    @apply btn border border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50 focus:ring-neutral-300;
+  }
+  .btn-ghost {
+    @apply btn border-0 bg-transparent text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 focus:ring-neutral-300;
+  }
+  .input {
+    @apply w-full rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-neutral-900 placeholder-neutral-400 transition-colors focus:border-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400;
+  }
+  .card {
+    @apply rounded-2xl border border-neutral-100 bg-white shadow-card transition-shadow;
+  }
+  .card-hover {
+    @apply card hover:shadow-card-hover;
+  }
+  .page-title {
+    @apply text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl;
+  }
+  .section-title {
+    @apply text-sm font-medium uppercase tracking-widest text-neutral-400;
+  }
+}
