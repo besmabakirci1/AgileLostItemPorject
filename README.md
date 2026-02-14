@@ -1,4 +1,4 @@
-# Kayıp Eşya Bulma Sitesi
+# AgileLost – Kayıp Eşya Bulma Sitesi
 
 **Seng 204 Final Projesi** – Agile / Scrum ile geliştirme.
 
